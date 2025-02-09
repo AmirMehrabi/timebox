@@ -61,8 +61,8 @@
 
                             <div class="mb-4 h-full">
                                 <h3 class="text-xl mb-2">بارش فکری</h3>
-                                <textarea v-model="brainDump" cols="45" rows="20"
-                                    class="bg-dotted-spacing-5 resize-none h-full bg-dotted-gray-300 w-full px-2 py-3.5 focus:outline-none border"></textarea>
+                                <textarea v-model="brainDump" cols="40" rows="25"
+                                    class="bg-dotted-spacing-5 resize-none bg-dotted-gray-300 w-full px-2 py-3.5 focus:outline-none border"></textarea>
                             </div>
                         </div>
 
@@ -70,20 +70,20 @@
                         <div class="p-6">
                             <div class="flex gap-2 mb-4">
                                 <label for="">تاریخ: </label>
-                                <input v-model="date" type="text" class="border-b w-full focus:outline-none" readonly>
+                                <input v-model="date" type="text" class="border-b w-full focus:outline-none text-center font-bold" readonly>
                             </div>
                             <div class="grid grid-cols-7">
                                 <div class="p-2 flex justify-center content-center"></div>
                                 <div class="none col-span-3 text-center">:00</div>
                                 <div class="col-span-3 text-center">:30</div>
                             </div>
-                            <div class="grid grid-cols-7 border">
+                            <div class="grid grid-cols-7 gap-1 ">
                                 <template v-for="(hour, hourIndex) in hours" :key="hourIndex">
-                                    <div class="p-2 border-b  flex justify-center content-center items-center">
+                                    <div class="p-2 border  flex justify-center content-center items-center">
                                         @{{ hour }}
                                     </div>
                                     <template v-for="(minute, minuteIndex) in minutes" :key="minuteIndex">
-                                        <div :class="  ['border-b flex my-auto h-13.5', minuteIndex === 0 ? 'border-r' : '', timeSlots[hourIndex * 2 + minuteIndex].merged ? 'merged' : '']"
+                                        <div :class="  ['border flex my-auto h-12', minuteIndex === 0 ? 'border' : '', timeSlots[hourIndex * 2 + minuteIndex].merged ? 'merged' : '']"
                                             :colspan="timeSlots[hourIndex * 2 + minuteIndex].colspan"
                                             class="col-span-3">
                                             <textarea  v-model="timeSlots[hourIndex * 2 + minuteIndex].task"
