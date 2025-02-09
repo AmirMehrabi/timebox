@@ -6,32 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-                @font-face {
-            font-family: 'Pelak';
-            src: url('/css/fonts/PelakFA.woff2') format('woff2')
-        }
-
-        .font-sans {
-            font-family: 'Pelak' !IMPORTANT;
-        }
-
-        body {
-            font-family: 'Pelak' !IMPORTANT;
-        }
-        /* Custom CSS for A4 size */
-        .a4-canvas {
-          width: 210mm; /* A4 width */
-          height: 297mm; /* A4 height */
-          background-color: white;
-          border: 1px solid #ccc;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .merged {
-            background-color: #eef2ff; /* Light blue for merged/break slots */
-        }
+  @font-face {
+    font-family: 'Pelak';
+    src: url('/css/fonts/PelakFA.woff2') format('woff2')
+}
     </style>
     @vite(['resources/css/app.css'])
+
+    <style>
+
+    </style>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 

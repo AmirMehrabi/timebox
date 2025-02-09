@@ -1,2 +1,106 @@
 @import "tailwindcss";
 @source "../views";
+
+@media print {
+    /* Use !important to override inline Tailwind classes */
+    .flex,
+    .grid {
+      display: block !important;
+    }
+
+    /* Ensure grid columns take full width */
+    [class*="col-"] {
+      float: none !important;
+      width: 100% !important;
+    }
+
+    /* Optionally remove margins/paddings that conflict with print layout */
+    .p-6,
+    .p-2,
+    .p-1 {
+      padding: 0.5rem !important;
+    }
+
+    /* Set body background and color for print clarity */
+    body {
+      background: #fff !important;
+      color: #000 !important;
+      margin: 20mm !important;
+      font-size: 12pt !important;
+    }
+
+    /* Hide unnecessary interactive elements */
+    .no-print,
+    .hidden-print,
+    button {
+      display: none !important;
+    }
+  }
+
+
+
+.font-sans {
+    font-family: 'Pelak' !IMPORTANT;
+}
+
+body {
+    font-family: 'Pelak' !IMPORTANT;
+}
+/* Custom CSS for A4 size */
+.a4-canvas {
+  width: 210mm; /* A4 width */
+  height: 297mm; /* A4 height */
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.merged {
+    background-color: #eef2ff; /* Light blue for merged/break slots */
+}
+
+@media print {
+  /* Set a clean white background with standard font sizing */
+  body {
+    margin: 20mm;
+    color: #000;
+    background: #fff;
+    font-size: 12pt;
+  }
+
+  /* Hide interactive or non-essential elements */
+  .no-print,
+  .hidden-print,
+  button,
+  input[readonly] {
+    display: none !important;
+  }
+
+  /* Ensure textareas and input fields have visible borders for clarity */
+  textarea,
+  input {
+    border: 1px solid #000;
+    background: transparent;
+    color: #000;
+    box-shadow: none;
+  }
+
+  /* Override Tailwind grid-based layouts for better print flow */
+  .grid,
+  .flex {
+    display: block !important;
+  }
+
+  /* Remove any padding/margins that might cause layout issues */
+  .p-6,
+  .p-2,
+  .p-1 {
+    padding: 0.5rem !important;
+  }
+
+  /* Force tables or grid items to use full width when printing */
+  [class*="col-"] {
+    float: none;
+    width: 100% !important;
+  }
+}
